@@ -562,11 +562,11 @@ void setup()
     // Setup a hw serial connection for communication with the P1 meter and logging (not using inversion)
     Serial.begin(BAUD_RATE, SERIAL_8N1, SERIAL_FULL);
     Serial.println("");
-    Serial.println("Swapping UART0 RX to inverted");
+    //Serial.println("Swapping UART0 RX to inverted");
     Serial.flush();
 
     // Invert the RX serialport by setting a register value, this way the TX might continue normally allowing the serial monitor to read println's
-    USC0(UART0) = USC0(UART0) | BIT(UCRXI);
+    //USC0(UART0) = USC0(UART0) | BIT(UCRXI);
     Serial.println("Serial port is ready to recieve.");
 
     // * Set led pin as output
@@ -659,6 +659,9 @@ void setup()
     Serial.printf("MQTT connecting to: %s:%s\n", MQTT_HOST, MQTT_PORT);
 
     mqtt_client.setServer(MQTT_HOST, atoi(MQTT_PORT));
+
+    String topic = String(MQTT_ROOT_TOPIC);
+    send_mqtt_message(topic.c_str(), "Connected");
 
 }
 

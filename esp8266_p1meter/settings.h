@@ -15,22 +15,22 @@
 // #define SERIAL_TX TX
 
 // * Max telegram length
-#define P1_MAXLINELENGTH 1050
+#define P1_MAXLINELENGTH 1500
 
 // * The hostname of our little creature
 #define HOSTNAME "p1meter"
 
 // * The password used for OTA
-#define OTA_PASSWORD "admin"
+#define OTA_PASSWORD "7887dd093"
 
 // * Wifi timeout in milliseconds
-#define WIFI_TIMEOUT 30000
+#define WIFI_TIMEOUT 300000
 
 // * MQTT network settings
 #define MQTT_MAX_RECONNECT_TRIES 10
 
 // * MQTT root topic
-#define MQTT_ROOT_TOPIC "sensors/power/p1meter"
+#define MQTT_ROOT_TOPIC "sensors/power/anh"
 
 // * MQTT Last reconnection counter
 long LAST_RECONNECT_ATTEMPT = 0;
